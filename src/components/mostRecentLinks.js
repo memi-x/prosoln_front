@@ -1,24 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { CardTitle } from 'reactstrap';
 
-const MostRecentLinks = () => {
-    return(
-        <div>
-            <h3 align="center">Most Recent Links</h3>
-            <CardTitle tag="a" href="first">
-            {' '}
-            This second title link provided by the user
-            </CardTitle>
-            <CardTitle tag="a" href="first">
-            {' '}
-            This second title link provided by the user
-            </CardTitle>
-            <CardTitle tag="a" href="first">
-            {' '}
-            This second title link provided by the user
-            </CardTitle>
-        </div>
-    )
+class MostRecentLinks extends Component {
+    render(){
+        // const { links } = this.props;
+        // const allLinks = links.map((link, index) => (
+        //     <CardTitle tag="a" href="first" key={index+1}>
+        //         {link.title}
+        //     </CardTitle>
+        //     ))
+        return(
+            <div>
+                <h3 align="center">Most Recent Links</h3>
+                {/* {allLinks} */}
+            </div>
+        )
+    }
 }
 
 export default MostRecentLinks;

@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 
-const CategoryWithHigherLinks = (props) => {
+class CategoryWithHigherLinks extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      category: 'My Category',
+      noOfLinks: 0
+    }
+  }
+  handleLoad = () => {
+    this.setState((prevState) => ({
+      category: prevState.category,
+      noOfLinks: prevState.noOfLinks + 1
+    }))
+  }
+  render(){
+
     return(
         <div>
             <Table borderless>
@@ -15,23 +30,24 @@ const CategoryWithHigherLinks = (props) => {
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>Technology</td>
-                    <td>25</td>
+                    <td>{this.state.category}</td>
+                    <td>{this.state.noOfLinks}</td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>marketing</td>
-                    <td>50</td>
+                    <td>{this.state.category}</td>
+                    <td>{this.state.noOfLinks}</td>
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td>Graphics</td>
-                    <td>21</td>
+                    <td>{this.state.category}</td>
+                    <td>{this.state.noOfLinks}</td>
                   </tr>
                 </tbody>
               </Table>
         </div>
     )
+  }
 }
 
 export default CategoryWithHigherLinks;
