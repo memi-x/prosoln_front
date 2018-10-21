@@ -3,10 +3,11 @@ import MostRecentLinks from './mostRecentLinks';
 import CategoryWithHigherLinks from './categoryWithHigherLinks';
 
 const RightSidebar = (props) => {
+
     return(
         <div>
-            <CategoryWithHigherLinks/>
-            <MostRecentLinks/>
+            <CategoryWithHigherLinks />
+            <MostRecentLinks />
         </div>
     )
 }
