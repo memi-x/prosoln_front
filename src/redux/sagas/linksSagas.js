@@ -6,8 +6,9 @@ import { fetchLinksSuccess, fetchLinksFailure } from '../actionCreators/linksAct
 export function* fetchLinksSaga() {
     try{
         const response = yield call(getLinksAPI)
-        const { links } = response;
-        yield put(fetchLinksSuccess(links))
+        const { data } = response;
+        yield put(fetchLinksSuccess(data))
+        console.log('links', data.links)
     } catch (error){
         yield put(fetchLinksFailure(error))
     }

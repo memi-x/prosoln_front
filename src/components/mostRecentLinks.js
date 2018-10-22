@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
-import { CardTitle } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 class MostRecentLinks extends Component {
     render(){
-        // const { links } = this.props;
         // const allLinks = links.map((link, index) => (
         //     <CardTitle tag="a" href="first" key={index+1}>
         //         {link.title}
         //     </CardTitle>
         //     ))
+        // const {fetchLinks} = this.props
         return(
             <div>
                 <h3 align="center">Most Recent Links</h3>
                 {/* {allLinks} */}
+                <Button onClick={this.handleFetchLinks}>click</Button>
             </div>
         )
     }

@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import { Card, CardTitle, CardText } from 'reactstrap';
+import { fetchLinks } from '../redux/actionCreators/linksActions';
 
 class Links extends Component {
+    componentDidMount(){
+        const { fetchLinks } = this.props;
+        fetchLinks()
+    }
     render(){
-        // const { links } = this.props;
+        const { links } = this.props;
+        console.log('data links', links)
         // const allLinks = links.map(link => (
         //     <Card body>
         //         <CardTitle tag="a" href="first">
@@ -62,4 +69,13 @@ class Links extends Component {
         )
     }
 }
-export default Links;
+
+const actionCreators = {
+    fetchLinks
+}
+
+const mapStateToProps = ({ links }) => ({
+    ...links
+})
+
+export default connect(mapStateToProps, actionCreators)(Links);

@@ -16,7 +16,7 @@ const linksReducer = (state = initialState, action) => {
     case FETCH_LINKS_SUCCESS:
       return { ...state, isLoading: false, links: action.links };
     case FETCH_LINKS_FAILURE:
-      return { ...state, isLoading: false, linksError: action.error };
+      return { ...state, isLoading: false, linksError: action.error};
     default:
       return { ...state };
   }

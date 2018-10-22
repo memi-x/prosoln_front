@@ -3,7 +3,7 @@ import { watchFetchLinks } from './linksSagas';
 
 function* rootSaga(){
     yield all([
-        watchFetchLinks
+        watchFetchLinks()
     ])
 }
 
